@@ -1,13 +1,3 @@
-**Portfolio**
-Live Preview - [Click Here](https://salesp07.github.io/)
-
-<br/>
-<div align="center">
-  <img alt="Demo" src="public/mockup.png" />
-</div>
-<br/>
-<br/>
-
 # 🛠 Installation and Setup Instructions
 
 1. Fork and clone this repository. You will need NodeJs and Git installed on your machine..
@@ -35,11 +25,3 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 3. Deploy the app
 
    `npm run deploy`
-
-## Contribute
-
-Pull Requests are welcome :)
-
-## Show your support
-
-Give a ⭐ if you like this website!
