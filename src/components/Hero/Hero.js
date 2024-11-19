@@ -16,6 +16,7 @@ import ScrollAnimation from "react-animate-on-scroll";
 function Hero() {
   const [isOpen, setIsOpen] = useState(false);
   const [showSubtitle, setShowSubtitle] = useState(false);
+  // eslint-disable-next-line
   const [showScrollDown, setShowScrollDown] = useState(false);
 
   const toggle = () => {
