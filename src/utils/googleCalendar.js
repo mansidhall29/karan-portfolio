@@ -38,7 +38,7 @@ export const getCalendarEvents = async () => {
         eventDetails = {
           bandName: bandName || event.summary,
           venue: venue || "TBA",
-          image: imageUrl || "/default-show-image.jpg",
+          image: imageUrl || "/default-show-image.jpeg",
           description: descParts.join(" ") || "No description available",
         };
       }
