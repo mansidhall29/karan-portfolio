@@ -88,10 +88,20 @@ const ImageContainer = styled.div`
   margin-bottom: 2rem;
 `;
 
+const AboutContainer = styled.div`
+  .SectionTitle {
+    font-size: 28px;
+    font-weight: 700;
+    color: #151418;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+`;
+
 function About() {
   return (
     <ContactWrapper id="about">
-      <div className="Container">
+      <AboutContainer className="Container">
         <div className="SectionTitle">About Me</div>
         <div
           className="BigCard"
@@ -101,7 +111,6 @@ function About() {
             borderRadius: "20px",
             padding: "40px",
             margin: "0 15px",
-            overflowX: "hidden",
             "@media (max-width: 768px)": {
               padding: "20px",
               margin: "0 10px",
@@ -176,7 +185,7 @@ function About() {
             </UpcomingWrapper>
           </BioSection>
         </div>
-      </div>
+      </AboutContainer>
     </ContactWrapper>
   );
 }

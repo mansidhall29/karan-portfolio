@@ -19,6 +19,10 @@ const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    padding: 0 0.5rem;
+  }
 `;
 
 const Header = styled.div`
@@ -74,6 +78,15 @@ const CardGrid = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.5rem;
   padding: 1rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    grid-template-columns: minmax(
+      280px,
+      320px
+    ); // Single column with fixed width range
+    justify-content: center; // Center the grid items
+    padding: 1rem 0.5rem;
+  }
 `;
 
 const shimmer = keyframes`
@@ -88,6 +101,8 @@ const Card = styled.article`
   box-shadow: ${({ theme }) => theme.shadows.md};
   transition: all 0.3s ease;
   position: relative;
+  width: 100%; // Take full width of grid cell
+  margin: 0 auto; // Center the card
 
   &::before {
     content: "";
