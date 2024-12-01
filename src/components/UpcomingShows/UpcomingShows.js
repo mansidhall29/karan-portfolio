@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { upcomingShows } from "../../data/ProjectData";
+import { getCalendarEvents } from "../../utils/googleCalendar";
 
 const ShowsWrapper = styled.div`
   margin-top: 50px;
@@ -153,12 +153,43 @@ function getNoShowsMessage(filter) {
 
 function UpcomingShows() {
   const [filter, setFilter] = useState("upcoming");
+  const [shows, setShows] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchShows = async () => {
+      setLoading(true);
+      const calendarEvents = await getCalendarEvents();
+      setShows(calendarEvents);
+      setLoading(false);
+    };
+
+    fetchShows();
+  }, []);
 
   const handleFilterChange = (event) => {
     setFilter(event.target.value);
   };
 
-  const filteredShows = filterShows(upcomingShows, filter);
+  const filteredShows = filterShows(shows, filter);
+
+  if (loading) {
+    return (
+      <ShowsWrapper id="upcoming-shows">
+        <div className="Container">
+          <Header>
+            <SectionTitle>Upcoming Shows</SectionTitle>
+            <FilterDropdown value={filter} onChange={handleFilterChange}>
+              <option value="past">Past</option>
+              <option value="today">Today</option>
+              <option value="upcoming">Upcoming</option>
+            </FilterDropdown>
+          </Header>
+          <div>Loading shows...</div>
+        </div>
+      </ShowsWrapper>
+    );
+  }
 
   return (
     <ShowsWrapper id="upcoming-shows">
