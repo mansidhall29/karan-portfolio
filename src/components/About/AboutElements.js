@@ -2,31 +2,38 @@ import styled from "@emotion/styled";
 
 export const ContactWrapper = styled.div`
   margin-top: 5rem;
-  padding: 2rem 1rem;
-  background-size: 200% 200%; /* Necessary for the animation */
-  animation: gradientAnimation 10s ease infinite;
-  color: white; /* Ensures text is readable */
-  text-align: center;
 
-  /* Keyframe animation for dynamic background */
-  @keyframes gradientAnimation {
-    0% {
-      background-position: 0% 50%;
+  .Container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    @media screen and (max-width: 768px) {
+      padding: 0;
     }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
+  }
+
+  .BigCard {
+    position: relative;
+    padding: 40px;
+
+    @media screen and (max-width: 768px) {
+      padding: 20px;
     }
   }
 `;
 
 export const Image = styled.img`
-  max-width: 200px;
+  max-width: 100%;
+  height: auto;
+  width: 300px;
+  display: block;
   margin: 0 auto;
-  margin-bottom: 1rem;
-  border-radius: 100px;
+
+  @media screen and (max-width: 768px) {
+    width: 200px;
+  }
 `;
 
 export const Technologies = styled.div`
